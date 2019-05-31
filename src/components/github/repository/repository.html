@@ -1,18 +1,13 @@
 <div class="repository">
-  <h2>Hello, this is demo page built using</h2>
-
-  <img src="img/angularjs-logo.png" width="300" />
-
-  <h3>With following tools</h3>
-
+  <h2>Github Public Repositories</h2>
   <div class="repository-list">
-    <div
-      class="repository-list-item"
-      ng-repeat="item in repository.items">
-
-      <h4>{{item.title}}</h4>
-      <img ng-src="{{item.image}}" />
-
+    <div class="repository-list-item" ng-repeat="item in repository.list ">
+      <img ng-src="{{item.owner.avatar_url}}" />
+      <div class="rows">
+        <h4>{{item.full_name}}</h4>
+        <p>{{item.description}}</p>
+      </div>      
     </div>
   </div>
+  <h3>Fim da lista</h3>
 </div>

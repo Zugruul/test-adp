@@ -1,25 +1,37 @@
-import angular from 'angular';
-import 'angular-mocks';
+import angular from 'angular'
+import 'angular-mocks'
 
-import githubModule from '../githubModule';
-import RepositoryController from './RepositoryController';
+import githubModule from '../githubModule'
+import RepositoryController from './RepositoryController'
 
-const { module, inject } = angular.mock;
+const { module, inject } = angular.mock
 
 describe('RepositoryController', () => {
-  beforeEach(module(githubModule));
+  const expectedData = [
+    { full_name: 'Github Repository with long name', description: 'Short description' },
+    { full_name: 'Github Repository with small name', description: 'Super mega hiper long description' },
+  ]
+  
+  beforeEach(module(githubModule))
 
-  let $controller;
+  let $controller
+  let $rootScope
 
-  beforeEach(inject((_$controller_) => {
-    $controller = _$controller_;
+  beforeEach(inject((_$rootScope_, _$controller_, $q) => {
+    $controller = _$controller_
+    $rootScope = _$rootScope_
+    spyOn(RepositoryController.prototype, 'getRepositories').and.callFake(function() {
+      const deferred = $q.defer()
+      deferred.resolve(expectedData)
+      return deferred.promise
+    })
   }));
 
-
-  it('has items property, and it is non empty array', () => {
+  it('has list property, and it is non empty array', () => {
     const controller = $controller(RepositoryController, {});
-
-    expect(controller.items).toBeTruthy();
-    expect(controller.items.length).toBeGreaterThan(0);
-  });
-});
+    $rootScope.$digest()
+    
+    expect(controller.list).toBeTruthy()
+    expect(controller.list.length).toBeGreaterThan(0)
+  })
+})

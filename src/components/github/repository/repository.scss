@@ -1,12 +1,36 @@
 .repository {
-  text-align: center;
 }
 
 .repository-list {
-
 }
 
 .repository-list-item {
-  width: 300px;
-  display: inline-block;
+  display: flex;
+  flex: 1;
+  background: white;
+  border-radius: 15px;
+  margin: 5px 10px;
+  max-height: 100px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  display: block;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+  border-radius: 15px 0px 15px 0px;
+}
+
+h4 {
+  margin: 5px 15px 5px 15px;
+}
+
+p {
+  margin: 3px 15px;
 }
