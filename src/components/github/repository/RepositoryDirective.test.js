@@ -1,15 +1,15 @@
 import angular from 'angular';
 import 'angular-mocks';
 
-import demoModule from '../demoModule';
+import githubModule from '../githubModule';
 
 const { module, inject } = angular.mock;
 
-describe('demoWelcome directive', () => {
+describe('githubModule directive', () => {
   let $compile;
   let $rootScope;
 
-  beforeEach(module(demoModule));
+  beforeEach(module(githubModule));
 
   beforeEach(inject((_$compile_, _$rootScope_) => {
     $compile = _$compile_;

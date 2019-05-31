@@ -1,4 +1,4 @@
-export default class WelcomeController {
+export default class RepositoryController {
   constructor() {
     this.items = [
       { title: 'Webpack', image: require('./img/what-is-webpack.png') },

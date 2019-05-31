@@ -1,13 +1,13 @@
 import angular from 'angular';
 import 'angular-mocks';
 
-import demoModule from '../demoModule';
-import WelcomeController from './WelcomeController';
+import githubModule from '../githubModule';
+import RepositoryController from './RepositoryController';
 
 const { module, inject } = angular.mock;
 
-describe('WelcomeController', () => {
-  beforeEach(module(demoModule));
+describe('RepositoryController', () => {
+  beforeEach(module(githubModule));
 
   let $controller;
 
@@ -17,7 +17,7 @@ describe('WelcomeController', () => {
 
 
   it('has items property, and it is non empty array', () => {
-    const controller = $controller(WelcomeController, {});
+    const controller = $controller(RepositoryController, {});
 
     expect(controller.items).toBeTruthy();
     expect(controller.items.length).toBeGreaterThan(0);

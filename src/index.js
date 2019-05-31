@@ -3,10 +3,10 @@ import angular from 'angular';
 import 'angular/angular-csp.css';
 import './index.scss';
 
-import demoModule from './demo/demoModule';
+import github from './components/github/githubModule';
 
 angular.module('main', [
-  demoModule,
+  github,
 ]);
 
 angular.bootstrap(document.documentElement, ['main']);
