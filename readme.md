@@ -1,92 +1,60 @@
-# Modern app seed for legacy Angular apps (1.x) 
+# Admission Test for ADP
 
-[![Build Status](https://travis-ci.org/zxbodya/angular-webpack-seed.svg?branch=master)](https://travis-ci.org/zxbodya/angular-webpack-seed)
-[![Coverage Status](https://coveralls.io/repos/zxbodya/angular-webpack-seed/badge.svg?branch=master&service=github)](https://coveralls.io/github/zxbodya/angular-webpack-seed?branch=master)
-[![codecov.io](https://codecov.io/github/zxbodya/angular-webpack-seed/coverage.svg?branch=master)](https://codecov.io/github/zxbodya/angular-webpack-seed?branch=master)
+This repository contains the admission test for [ADP](https://www.adp.com.br/). It's a visualizer of public github repositories that does the sum of the number of subscribers of selected repositories. It's written in [AngularJS](https://angularjs.org/) using NPM (package manager), Webpack (module loader), [Bootstrap](https://getbootstrap.com/) (toolkit) and [Karma](https://karma-runner.github.io/latest/index.html)/[Jasmine](https://jasmine.github.io/) (test runner and framework respectively).
 
-It is quite opinionated, so feel free - to make suggestions to improve it.
+## Setup
+To start this repository you must clone it and then navigate into its folder, as follows:
 
-Includes following:
+```
+ git clone [INSERT_GITHUB_LINK]
+ cd <directory_name>
+```
 
- - [Webpack](https://webpack.js.org/) (modules, assets bundling)
- - [babel](http://babeljs.io/) (modern javascript features)
- - [babel-plugin-angularjs-annotate](https://github.com/schmod/babel-plugin-angularjs-annotate)
- - karma test runner configuration with code coverage reports
- - [node-sass](https://github.com/sass/node-sass) for styles + AutoPrefixer 
+then yo must install the project dependencies, to do so run the following command:
 
+```
+ npm install
+```
 
-Requirements:
- 
-- NodeJS 8+ is required.
-- [Yarn](https://yarnpkg.com) is optional to use, but I recommend using it. (if no - npm is ok).  
+Once the repository has been cloned and it's dependencies installed you can proceed. The following sections explain how to run the project both in development and in production modes. 
 
-### Usage
+## Run in Development Mode
+To run in development mode run the following:
 
-1. Install dependencies `yarn install`
-2. Start dev server `yarn run dev` open [http://localhost:2992](http://localhost:2992)
-3. Lint your code `yarn run lint`
-4. Run unit tests `yarn run test`
-5. Create build for deployment `yarn run build` for production build, or `yarn run build-dev` for development build
+```
+npm start
+```
 
-To analyze your bundle size - I recommend using [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer)
+To build in development mode run the following:
 
----
+```
+npm run build
+```
 
-## Getting started
+## Run tests
+To run the unit tests run the following:
 
-[Angular Guide](https://docs.angularjs.org/guide)
+```
+npm run test
+```
 
-At first be sure that you are familiar with ES2015, some useful materials:
+To check code coverage run the following:
 
- - [tutorial from BabelJS](http://babeljs.io/docs/learn-es2015/)
- - [Exploring ES6: Upgrade to the next version of JavaScript by Dr. Axel Rauschmayer](http://exploringjs.com/)
-  
-Read [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) - it is important to know, what is good and what is not, and why.
+```
+npm run test:coverage
+```
 
-At least briefly read [webpack documentation](http://webpack.github.io/docs/) it is crucial to understand how it works in general. 
+## Run in Production Mode
+To run in production mode run the following command:
 
----
+```
+npm run build:prd
+```
 
-## Usage advice 
+To run the production build you can run it by running:
+```
+npm run serve:prd
+```
 
-### Directory layout
-
-    ├── build              # build stats
-    ├── public             # public folder (webroot for dev server)
-    │   ├── _assets        # build results - assets packed by webpack
-    │   └── index.html     # one of app entry points, for dev server
-    └── src                # app sources
-        ├── demo           # one of app modules
-        ├── index.js       # app entry module
-        ├── index.scss     # 
-        └── index.test.js  # entry point for test karma
-
-### Styleguide
-
-Except my notes below(which can be incomplete and outdated), I highly encourage you to check out:
-
-- [Angular Style Guide, by John Papa](https://github.com/johnpapa/angular-styleguide)
-- [Angular 1.x styleguide, by Todd Motto](https://github.com/toddmotto/angular-styleguide)
-
----
-
-### Angular specific conventions
-
-Application organisation rules:
-
-1. Split app into angular "modules" 
-    - every module should have own folder, and should be defined in one file which will require all module components and will export module name 
-    - module can have nested modules
-    - module can require other modules which are direct siblings of it or parent modules, or modules nested in it (if you need to require module that is nested in "sibling" - you you should move it up by hierarchy before requiring it)
-2. Keep modules small - if module is too big, maybe it should be few modules 
-3. Every file should have only one entity inside it, for example if there is directive which has controller and template - there should be three files, plus likely two for unit tests   
-4. Group related resources by folders
-5. Name files with suffixes `Directive`, `Controller`, `Factory`, `Service`, `Provider`
-6. Use `.test` suffix for test file names
-
-### Directives
-
-1. Prefer to use isolated scopes
-2. Use controllerAs syntax 
-3. Controller should act as ViewModel, use $scope only if you need it
-4. All model layer (data fetching, business logic) should be in services
+## Seed
+This project was created using the following seed: https://github.com/zxbodya/angular-webpack-seed
