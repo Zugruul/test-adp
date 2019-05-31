@@ -12,7 +12,7 @@ install:
 
 script:
   - npm run test
-  - npm run cover
+  - npm run test:coverage
 
 before_script:
   - export DISPLAY=:99.0
