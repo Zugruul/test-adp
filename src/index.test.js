@@ -1,3 +1,3 @@
 // load all js sources
-const testsContext = require.context('./github', true, /\.js$/);
+const testsContext = require.context('./components/github', true, /\.js$/);
 testsContext.keys().forEach(testsContext);

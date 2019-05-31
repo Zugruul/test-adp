@@ -17,7 +17,7 @@ describe('githubModule directive', () => {
   }));
 
   it('Replaces the element with the appropriate content', () => {
-    const element = $compile('<div demo-welcome=""></div>')($rootScope);
+    const element = $compile('<div github-repository=""></div>')($rootScope);
     $rootScope.$digest();
     expect(element.html()).toContain('Hello, this is demo page');
   });
