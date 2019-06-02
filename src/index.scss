@@ -1,3 +1,12 @@
-body {
-  background-color: #eeeefa;
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.text-light {
+  color: #999;
+}
+
+.text-light-clickable {
+  color: #fff;
 }

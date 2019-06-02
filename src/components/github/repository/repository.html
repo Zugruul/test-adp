@@ -1,13 +1,14 @@
-<div class="repository">
-  <h2>Github Public Repositories</h2>
-  <div class="repository-list">
-    <div class="repository-list-item" ng-repeat="item in repository.list ">
-      <img ng-src="{{item.owner.avatar_url}}" />
-      <div class="rows">
-        <h4>{{item.full_name}}</h4>
-        <p>{{item.description}}</p>
-      </div>      
-    </div>
-  </div>
-  <h3>Fim da lista</h3>
+<div class="pre-scrollable">
+  <ul class="list-group">
+      <li ng-click="repository.selectRepository($index)" class="clickable list-group-item {{repository.selected[$index] ? 'active' : ''}}" ng-repeat="item in repository.list">
+        <div class="name">
+          {{item.full_name}}
+        </div>
+        <div class="rounded-item-box">
+          <svg class="octicon-star" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+          {{item.subscribers.length}}
+          subscribers
+        </div>
+      </li>
+  </ul>
 </div>

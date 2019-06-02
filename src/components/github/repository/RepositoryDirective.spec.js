@@ -25,6 +25,6 @@ describe('githubModule directive', () => {
   it('Replaces the element with the appropriate content', () => {
     const element = $compile('<div github-repository=""></div>')($rootScope)
     $rootScope.$digest()
-    expect(element.html()).toContain('Github Public Repositories')
+    expect(element.html()).toContain('list-group')
   })
 })
