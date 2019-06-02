@@ -1,4 +1,4 @@
-# Admission Test for ADP
+# Admission Test for ADP [![Build Status](https://travis-ci.org/Zugruul/test-adp.svg?branch=dev)](https://travis-ci.org/Zugruul/test-adp)
 
 This repository contains the admission test for [ADP](https://www.adp.com.br/). It's a visualizer of public github repositories that does the sum of the number of subscribers of selected repositories. It's written in [AngularJS](https://angularjs.org/) using NPM (package manager), Webpack (module loader), [Bootstrap](https://getbootstrap.com/) (toolkit) and [Karma](https://karma-runner.github.io/latest/index.html)/[Jasmine](https://jasmine.github.io/) (test runner and framework respectively).
 
