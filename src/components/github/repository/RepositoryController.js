@@ -1,6 +1,5 @@
 export default class RepositoryController {
   constructor($http, $q) {
-    $http.defaults.headers.common.Authorization = 'token 11891cafd6337d610f94e517c668d7ce5a301810';  
     const that = this
     this.getSubscribers = this.getSubscribers.bind(this)
     this.getRepositories = this.getRepositories.bind(this)
