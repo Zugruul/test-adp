@@ -51,10 +51,18 @@ To run in production mode run the following command:
 npm run build:prd
 ```
 
-To run the production build you can run it by running:
+To run the production build you need to serve it somehow. I recommend [http-server](https://github.com/indexzero/http-server):
+
+To install it (globally)
 ```
-npm run serve:prd
+npm i -g http-server
 ```
+
+To serve the build files and start an server:
+```
+http-server
+```
+Note: By default the server will run on `localhost:8080`. But watch your terminal logs for more info.
 
 ## Problems you may encounter
 + As of right now I didn't plan on a way to get an access token dynamically. So beware of reloading as there is a 5000 api requests limit to github (unauthenticated). To mitigate this you may modify the file located at `src/config/index.js` with your token (Or uncomment my one, but I don't guarantee it will work)
