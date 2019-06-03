@@ -40,19 +40,19 @@ describe('navbarModule directive', () => {
 
   it('Replaces the element with the appropriate content', () => {
     const element = $compile(
-      '<div><div github-navbar=""></div><div github-repository=""></div></div>'
+      '<div github-navbar=""></div><div github-repository=""></div>'
     )($rootScope)
     
     const $scope = $rootScope.$new()
     $controller(RepositoryController, { $scope })
 
     $rootScope.$digest()
-    expect(element.html()).toMatch(/[subscriber count].*[0]/gi)
+    expect(element.html()).toMatch(/(<\/path><\/svg>)\s*(0)\s*<\/a>/)
   })
 
   it('Selecting github-repositories and show correct sum of subscribers', () => {
     const element = $compile(
-      '<div><div github-repository=""></div><div github-footer=""></div></div>'
+      '<div github-navbar=""></div><div github-repository=""></div>'
     )($rootScope)
     
     const $scope = $rootScope.$new()
@@ -64,13 +64,12 @@ describe('navbarModule directive', () => {
     $scope.repository.selectRepository(1)
     
     $rootScope.$digest()
-
-    expect(element.html()).toMatch(/[subscriber count].*[5]/gi)
+    expect(element.html()).toMatch(/(<\/path><\/svg>)\s*(5)\s*<\/a>/)
   })
 
   it('Deselects github-repositories and show correct count', () => {
     const element = $compile(
-      '<div><div github-repository=""></div><div github-footer=""></div></div>'
+      '<div github-navbar=""></div><div github-repository=""></div>'
     )($rootScope)
     
     const $scope = $rootScope.$new()
@@ -84,6 +83,6 @@ describe('navbarModule directive', () => {
     
     $rootScope.$digest()
 
-    expect(element.html()).toMatch(/[subscriber count].*[3]/gi)
+    expect(element.html()).toMatch(/(<\/path><\/svg>)\s*(3)\s*<\/a>/)
   })
 })

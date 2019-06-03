@@ -1,6 +1,6 @@
 export default class RepositoryController {
   constructor($http, $q) {
-    // $http.defaults.headers.common.Authorization = 'token '
+    // $http.defaults.headers.common.Authorization = 'token TOKEN_HERE'
     const that = this
     this.getSubscribers = this.getSubscribers.bind(this)
     this.getRepositories = this.getRepositories.bind(this)
@@ -50,7 +50,7 @@ export default class RepositoryController {
         return response.data
       })
       .catch(function(error){
-        return error
+        console.error(error)
       })
   }
 
@@ -78,8 +78,11 @@ export default class RepositoryController {
   selectRepository(index) {
     const { 
       selected,
-      updateSubscriberSum
+      updateSubscriberSum,
+      list
     } = this
+
+    if(!list[index].subscribers) return
 
     if(!!selected[index]) delete selected[index]
     else selected[index] = true
