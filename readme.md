@@ -63,8 +63,8 @@ http-server
 Note: By default the server will run on `localhost:8080`. But watch your terminal logs for more info.
 
 ## Problems you may encounter
-+ As of right now I didn't plan on a way to get an access token dynamically. So beware of reloading as there is a 5000 api requests limit to github (unauthenticated). To mitigate this you may modify the file located at `src/config/index.js` with your token (Or uncomment my one, but I don't guarantee it will work)
-*Note:* You can get an access token by going [here](https://github.com/settings/tokens) and generating one yourself
++ As of right now I didn't plan on a way to get an access token dynamically. So beware of reloading as there is a 5000 api requests limit to github (unauthenticated). To mitigate this you may modify the file located at `src/config/index.js` with your token.
+*Note:* You can get an access token by going [here](https://github.com/settings/tokens) and generating one. 
 
 ## Notes and Todos
 I used Travis-CI (took my time to learn it a bit, using a pre-build script I found) to ensure that tests were passing as of each commit. (Ofcourse the ones I was setting things up caused some red 'flags'! :p)
