@@ -51,9 +51,7 @@ To run in production mode run the following command:
 npm run build:prd
 ```
 
-To run the production build you need to serve it somehow. I recommend [http-server](https://github.com/indexzero/http-server):
-
-To install it (globally)
+To run the production build you need to serve it somehow. I recommend [http-server](https://github.com/indexzero/http-server). To install it (globally):
 ```
 npm i -g http-server
 ```
