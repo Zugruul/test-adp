@@ -1,6 +1,7 @@
 <div class="pre-scrollable">
+  <div>{{repository.error}}</div>
   <ul class="list-group">
-      <li ng-click="repository.selectRepository($index)" class="clickable list-group-item {{repository.selected[$index] ? 'active' : ''}}" ng-repeat="item in repository.list">
+      <li ng-disabled="repository.error" ng-click="repository.selectRepository($index)" class="clickable list-group-item {{repository.selected[$index] ? 'active' : ''}}" ng-repeat="item in repository.list">
         <div class="name">
           {{item.full_name}}
         </div>

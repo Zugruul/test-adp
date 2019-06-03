@@ -1,6 +1,8 @@
+import { githubAccessToken } from '../../../config'
+
 export default class RepositoryController {
   constructor($http, $q) {
-    // $http.defaults.headers.common.Authorization = 'token TOKEN_HERE'
+    if(githubAccessToken) $http.defaults.headers.common.Authorization = `token ${githubAccessToken}`
     const that = this
     this.getSubscribers = this.getSubscribers.bind(this)
     this.getRepositories = this.getRepositories.bind(this)
@@ -12,8 +14,16 @@ export default class RepositoryController {
     this.subscriberSum = 0
     this.repositorySelectedCount = 0
 
+    this.loading = true
+    this.error = ""
+
     this.getRepositories().then(function(data) {
       that.list = data
+      that.loading = false
+    }).catch(function(error){
+      that.loading = false
+      console.error(error)
+      that.error = "An error occurred. Couldn't fetch public repository list. Try again later or try again with an API access key (See readme)."
     })
   }
 
@@ -45,12 +55,15 @@ export default class RepositoryController {
       $http
     } = this
     
+    const that = this
+
     return $http.get(subscribers_url)
       .then(function(response){
         return response.data
       })
       .catch(function(error){
         console.error(error)
+        that.error = "An error occurred. Couldn't fetch one or more subscribers list. Try again later or try again with an API access key (See readme)."
       })
   }
 
