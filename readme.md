@@ -71,6 +71,7 @@ I used Travis-CI (took my time to learn it a bit, using a pre-build script I fou
 Some problems I would like to present:
 + As of this commit the header and footer directives are dependent on the repository directive. Thats something I would like to have had time to refactor.
 + As of for tests I didn't have time to really play a lot with them using AngularJS. I worked most of my free time on understanding AngularJS modules, injection to create tests that test what the user will interact and try to do and verify that all functionalities work according to some sidenotes I should've included here (BDD I've done).
++ I would've liked to have more time to study AngularJS code architecture and good practices. But as of right now I can't.
 I'm sure that there is lots more I could've have done, but those two are the things I would like to comment on.
 
 ## Coverage summary
