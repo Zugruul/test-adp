@@ -6,8 +6,8 @@ This repository contains the admission test for [ADP](https://www.adp.com.br/). 
 To start this repository you must clone it and then navigate into its folder, as follows:
 
 ```
- git clone [INSERT_GITHUB_LINK]
- cd <directory_name>
+ git clone https://github.com/Zugruul/test-adp.git
+ cd test-adp
 ```
 
 then yo must install the project dependencies, to do so run the following command:
@@ -69,10 +69,10 @@ I'm sure that there is lots more I could've have done, but those two are the thi
 
 ## Coverage summary
 ``` 
-Statements   : 92% ( 184/200 )
-Branches     : 58.33% ( 7/12 )
-Functions    : 76.74% ( 33/43 )
-Lines        : 93.44% ( 171/183 )
+Statements   : 89.52% ( 188/210 )
+Branches     : 57.14% ( 8/14 )
+Functions    : 75% ( 33/44 )
+Lines        : 91.15% ( 175/192 )
 Total of 12 successful tests
 ```
 
