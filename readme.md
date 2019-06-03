@@ -28,7 +28,7 @@ npm start
 To build in development mode run the following:
 
 ```
-npm run build
+npm run build:dev
 ```
 
 ## Run tests
