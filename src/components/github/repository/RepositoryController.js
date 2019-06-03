@@ -1,5 +1,6 @@
 export default class RepositoryController {
   constructor($http, $q) {
+    // $http.defaults.headers.common.Authorization = 'token '
     const that = this
     this.getSubscribers = this.getSubscribers.bind(this)
     this.getRepositories = this.getRepositories.bind(this)
@@ -61,8 +62,9 @@ export default class RepositoryController {
 
     let sum = 0
     let count = 0
-
-    Object.keys(selected).forEach(key => {
+    const keys = Object.keys(selected)
+    
+    !!keys.length && keys.forEach(key => {
       if(!!selected[key]) {
         sum += list[key].subscribers.length
         count++;
@@ -81,7 +83,7 @@ export default class RepositoryController {
 
     if(!!selected[index]) delete selected[index]
     else selected[index] = true
-
+    
     updateSubscriberSum()
   }
 }

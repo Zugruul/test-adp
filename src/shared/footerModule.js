@@ -1,5 +1,5 @@
 import angular from 'angular';
-import footerDirective from './FooterDirective';
+import footerDirective from './footer/FooterDirective';
 
 export default angular
   .module('footer', [])

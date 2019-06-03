@@ -5,8 +5,8 @@ import 'angular-ui-bootstrap'
 import './index.scss'
 
 /** Shared Modules */
-import navbar from './shared/navbar/navbarModule'
-import footer from './shared/footer/footerModule'
+import navbar from './shared/navbarModule'
+import footer from './shared/footerModule'
 
 /** Component Modules */
 import github from './components/github/githubModule'

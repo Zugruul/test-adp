@@ -1,5 +1,5 @@
 import angular from 'angular';
-import navbarDirecrive from './NavbarDirective';
+import navbarDirecrive from './navbar/NavbarDirective';
 
 export default angular
   .module('navbar', [])
